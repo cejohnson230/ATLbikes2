@@ -1,0 +1,99 @@
+
+'use strict';
+    (function () {
+
+    angular
+        .module('app.cart')
+        .controller('CartController', BikePartController);
+
+    /* @ngInject */
+	function CartController($stateParams, $scope,  $q, logger, CoreService, $mdDialog, $mdToast){
+        var imagePath = 'assets/images/angular.png';
+
+	    $scope.addToCart = function(ev, item) {
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: 'assets/templates/addItemToCart.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+	fullscreen: false, // Only for -xs, -sm breakpoints.
+	locals: {
+	    item : item
+	}
+    })
+    .then(function() {
+      $mdToast.show(
+		    $mdToast.simple()
+			.textContent("Item was added to cart")
+			.hideDelay(3000)
+			)
+    }, function() {
+      $mdToast.show(
+		    $mdToast.simple()
+			.textContent("Item was not added to cart")
+			.hideDelay(3000)
+			)
+    });
+  };
+
+
+$scope.todos = [
+      {
+        face : imagePath,
+        what: 'Brunch this weekend?',
+        who: 'Min Li Chan',
+        when: '4:08PM',
+        notes: " I'll be in your neighborhood doing errands"
+      },
+      {
+        face : imagePath,
+        what: 'Brunch this weekend?',
+        who: ' Li Chan',
+        when: '3:08PM',
+        notes: " I'll be in your neighborhood doing errands"
+      },
+      {
+        face : imagePath,
+        what: 'Brunch this weekend?',
+        who: 'Min Li n',
+        when: '3:08PM',
+        notes: " I'll be in your neighborhood doing errands"
+      },
+      {
+        face : imagePath,
+        what: 'Brunch this weekend?',
+        who: 'Min Li Chan',
+        when: '3:08PM',
+        notes: " I'll be in your neighborhood doing errands"
+      },
+      {
+        face : imagePath,
+        what: 'Brunch this weekend?',
+        who: 'Min Li Chan',
+        when: '3:08PM',
+        notes: " I'll be in your neighborhood doing errands"
+      },
+    ];
+
+        $scope.loginFunc = function()
+        {
+            console.log($scope.user)
+        }
+	    function DialogController($scope, $mdDialog, $mdToast, item) {
+		$scope.myForm = {}
+		$scope.quantity = 1
+		$scope.item = item
+		console.log(item)
+		$scope.validate = function()
+		{
+		    $mdDialog.hide()
+		}
+		
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+  }
+    }
+})();

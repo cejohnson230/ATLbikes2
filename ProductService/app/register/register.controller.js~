@@ -1,0 +1,21 @@
+    'use strict';
+    (function () {
+
+    angular
+        .module('app.register')
+        .controller('RegisterController', RegisterController);
+
+    /* @ngInject */
+    function LoginController($stateParams, $scope,  $q, logger, CoreService){
+
+
+        $scope.user = {}
+
+        //TODO validate the entries and then call the adduser function in the CoreService
+        $scope.loginFunc = function()
+        {
+            console.log($scope.user)
+            console.log(CoreService.login($scope.user.username, $scope.user.password))
+        }
+    }
+})();

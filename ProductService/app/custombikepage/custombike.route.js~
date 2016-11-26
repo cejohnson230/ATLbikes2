@@ -1,0 +1,27 @@
+(function() {
+    'use strict';
+
+    angular
+        .module('app.custombike')
+        .run(appRun);
+
+    /* @ngInject */
+    function appRun(routerHelper) {
+        routerHelper.configureStates(getStates());
+    }
+
+    function getStates() {
+        return [
+            {
+                state: 'custombike',
+                    config: {
+                    url: '/custombike',
+                    templateUrl: 'app/custombike/custombike.html',
+                    controller: 'CustomBikeController',
+                    controllerAs: 'vm',
+                    title: 'CustomBikeController'
+                }
+            }
+        ];
+  }
+})();

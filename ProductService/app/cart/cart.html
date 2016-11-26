@@ -1,0 +1,38 @@
+<h1>Cart</h1>
+<div ng-switch on="isCartEmpty()">
+<div ng-switch-when="false">
+  <div class="row">
+    <div class="small-8 column"><h3>Item</h3></div>
+    <div class="small-2 column"><h3>Price</h3></div>
+    <div class="small-2 column"><h3>Remove</h3></div>
+  </div>
+    <div class="row" ng-repeat="cartitem in cart" >
+      <div ng-switch on="checkIfBike(cartitem)">
+          <div ng-switch-when="false" class="small-4 column">
+            <img ng-src="{{cartitem.item.photo}}?{{$index}}" class="md-avatar" alt="{{cartitem.item.name}}" />
+	  </div>
+          <div ng-switch-when="false" class="small-2 column">{{ cartitem.item.name }}
+	  </div>
+	  <div ng-switch-when="false" class="small-2 column"><button type="button" name="Change Quantity" ng-click="changeQuantity($event, cartitem, cart, $index)">Quantity: {{cartitem.quantity}}</button></div>
+
+    <div ng-switch-when="true" class="small-8 column">
+      <custombike index=$index fork-color = "cartitem.item.forkColor" frame-color="cartitem.item.frameColor"
+      seat-color='cartitem.item.seatColor' handle-color="cartitem.item.handleColor" frame-decal-color='caritem.item.frameDecalColor'></custombike>
+    </div>
+    <div class="small-2 column">
+    ${{cartitem.item.price}}
+    </div>
+    <div class="small-2 column">
+            <button type="button" name="Remove" ng-click="removeFromCart($event, $index)">Remove</button>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-offset-2 small-4 column"><button ng-click="goToCheckout()">Checkout</button></div>
+    <div class="small-6 column">
+  <h3>Cart total is ${{total}}</h3>
+</div>
+</div>
+</div>
+<div ng-switch-when ="true"><h1>Cart is empty</h1></div>
+</div>

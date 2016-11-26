@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+<base href="/"/>
+
+  <meta charset="utf-8">
+  <title ng-bind="title"></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <meta name="mobile-web-app-capable" content="yes">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+  </script>
+  <script type="text/javascript" src="assets/d3/d3.js"></script>
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+  <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+  <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="bower_components/angucomplete-alt/angucomplete-alt.css" />
+  <link rel="stylesheet" href="bower_components/angular-bootstrap-colorpicker/css/colorpicker.css" />
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css({.tmp/serve,src}) styles/app.css -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="app/index.css">
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+
+<body>
+  <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <div style="height: 100%" ng-include="'app/layout/shell.html'" ng-controller="ShellController as vm"></div>
+  <!--<div style="height: 100%" ng-include="'app/layout/test.html'"></div>-->
+
+  <!-- build:js(src) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/modernizr/modernizr.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/fastclick/lib/fastclick.js"></script>
+  <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+  <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+  <script src="bower_components/angular-foundation/mm-foundation-tpls.js"></script>
+  <script src="bower_components/malarkey/dist/malarkey.min.js"></script>
+  <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+  <script src="bower_components/toastr/toastr.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/extras.angular.plus/ngplus-overlay.js"></script>
+  <script src="bower_components/angular-ui-router-title/angular-ui-router-title.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
+  <script src="bower_components/lodash-angular-wrapper/lodash-angular-wrapper.js"></script>
+  <script src="bower_components/angucomplete-alt/angucomplete-alt.js"></script>
+  <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+  <script src="bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-payments/lib/angular-payments.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+  <!-- inject:js -->
+  <script src="app/directives/directives.module.js"></script>
+  <script src="app/directives/custombike/custombike.directive.js"></script>
+  <script src="app/blocks/router/router.module.js"></script>
+  <script src="app/blocks/router/router-helper.provider.js"></script>
+  <script src="app/blocks/logger/logger.module.js"></script>
+  <script src="app/blocks/logger/logger.js"></script>
+  <script src="app/blocks/exception/exception.module.js"></script>
+  <script src="app/blocks/exception/exception.js"></script>
+  <script src="app/blocks/exception/exception-handler.provider.js"></script>
+  <script src="app/blocks/analytics/analytics.module.js"></script>
+  <script src="app/blocks/analytics/analytics-helper.js"></script>
+  <script src="app/register/register.module.js"></script>
+  <script src="app/register/register.route.js"></script>
+  <script src="app/register/register.controller.js"></script>
+  <script src="app/profile/profile.module.js"></script>
+  <script src="app/profile/profile.route.js"></script>
+  <script src="app/profile/profile.controller.js"></script>
+  <script src="app/login/login.module.js"></script>
+  <script src="app/login/login.route.js"></script>
+  <script src="app/login/login.controller.js"></script>
+  <script src="app/layout/layout.module.js"></script>
+  <script src="app/layout/shell.controller.js"></script>
+  <script src="app/home/home.module.js"></script>
+  <script src="app/home/home.route.js"></script>
+  <script src="app/home/home.controller.js"></script>
+  <script src="app/filters/filters.module.js"></script>
+  <script src="app/filters/trusted.filter.js"></script>
+  <script src="app/core/core.module.js"></script>
+  <script src="app/core/core.service.js"></script>
+  <script src="app/core/core.route.js"></script>
+  <script src="app/core/constants.js"></script>
+  <script src="app/core/config.js"></script>
+  <script src="app/custombikepage/custombikepage.module.js"></script>
+  <script src="app/custombikepage/custombikepage.route.js"></script>
+  <script src="app/custombikepage/custombikepage.controller.js"></script>
+  <script src="app/cart/cart.module.js"></script>
+  <script src="app/cart/cart.route.js"></script>
+  <script src="app/cart/cart.controller.js"></script>
+  <script src="app/checkout/checkout.module.js"></script>
+  <script src="app/checkout/checkout.route.js"></script>
+  <script src="app/checkout/checkout.controller.js"></script>
+  <script src="app/bikepart/bikepart.module.js"></script>
+  <script src="app/bikepart/bikepart.route.js"></script>
+  <script src="app/bikepart/bikepart.controller.js"></script>
+  <script src="app/app.module.js"></script>
+  <!-- endinject -->
+
+  <!-- inject:partials -->
+  <!-- angular templates will be automatically converted in js and inserted here -->
+  <!-- endinject -->
+  <!-- endbuild -->
+
+</body>
+
+</html>

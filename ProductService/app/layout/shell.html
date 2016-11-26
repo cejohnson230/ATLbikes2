@@ -1,0 +1,46 @@
+<div class="off-canvas-wrap" >
+	<div class="inner-wrap" >
+    <div class="header">
+      <!-- <mt-search-bar control="vm.focusinControl"></mt-search-bar> -->
+      <nav class="tab-bar" data-offcanvas>
+        <section class="left top-bar-section">
+          <ul class="left" style="list-style:none;">
+            <li><a class="left-off-canvas-toggle menu-icon"><span></span></a></li>
+            <li> <a ng-click='goToHomePage()'>BikeShop</a></li>
+          </ul>
+        </section>
+        <section class="right top-bar-section ">
+          <ul class="right" style="list-style:none;">
+          </ul>
+        </section>
+      </nav>
+    </div>
+		<aside class="left-off-canvas-menu">
+			<ul class="off-canvas-list">
+				<div ng-switch on="isAuthenticated()">
+					<li ng-switch-when="true"><a ng-click="goToProfile()">User</a></li>
+					<li ng-switch-when="true"><a ng-click="logout()">Logout</a></li>
+					<li ng-switch-when="false"><a ng-click="goToLogin()">Login</a></li>
+					<li ng-switch-when="false"><a ng-click="goToRegister()">Register</a></li>
+				</div>
+				<li class="dropdown">
+					<li><a ng-click='goToCart()'>Cart</a></li>
+          <li><a ng-click='goToBikePart(vm.forks)'>Bike Forks</a></li>
+          <li><a ng-click='goToBikePart(vm.frames)'>Bike Frames</a></li>
+					<li><a ng-click='goToBikePart(vm.seats)'>Bike Seats</a></li>
+					<li><a ng-click='goToBikePart(vm.handles)'>Bike Handles</a></li>
+					<li><a ng-click='goToBikePart(vm.wheels)'>Bike Wheels</a></li>
+					<li><a ng-click='goToCustomBike()'>Custom Bike</a></li>
+      </li>
+
+		</aside>
+		<!-- <article class="small-12 columns main" infinite-scroll='vm.broadcastBottomScroll()' infinite-scroll-distance='1'> -->
+
+		<article id="main-content" class="small-12 columns main">
+			<div id="content" class="content">
+        <div ui-view="" ></div>
+			</div>
+		</article>
+		<a class="exit-off-canvas"></a>
+	</div>
+</div>

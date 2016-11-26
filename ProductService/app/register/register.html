@@ -1,0 +1,25 @@
+<br>Username</br>
+<input type="text" ng-model="user.username">
+<br>Password</br>
+<input type="password" ng-model="user.password">
+<br>First Name</br>
+<input type="text" ng-model="user.first_name">
+<br>Last Name</br>
+<input type="text" ng-model="user.last_name">
+<br>Email</br>
+<input type="text" ng-model="user.email">
+<br>Street Address</br>
+<input type="text" ng-model="user.address.street_address">
+<br>City</br>
+<input type="text" ng-model="user.address.city">
+<br>Zip Code</br>
+<input type="text" ng-model="user.address.zip_code">
+<form name="cardform">
+<br>Credit Card Number</br>
+<input type="text" ng-model="user.card.card_number" payments-validate="card" payments-format="card">
+<br>Exp Date</br>
+<input type="text" ng-model="user.card.exp_date" payments-validate="expiry" payments-format="expiry">
+<br>Security Code</br>
+<input type="text" ng-model="user.card.card_code" payments-validate="cvc" payments-format="cvc">
+</form>
+<button type="button" name="login" ng-click="registerFunc()">Register</button>

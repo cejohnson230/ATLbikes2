@@ -1,0 +1,53 @@
+.skutube-icon {
+   padding-top: 1rem;
+}
+.menu-item {
+	color: white;
+}
+.channel-icon {
+  width:40px;
+  height:40px;
+}
+
+.content {
+    padding-top: 2.8em;
+}
+
+#main-content {
+    overflow-y: auto;
+}
+
+#content {
+  @media #{$large-only}, #{$medium-only}{
+    margin-bottom: 130px;
+  }
+}
+
+
+article,
+body,
+html,
+.off-canvas-wrap,
+.off-canvas-wrap .inner-wrap,
+
+.row {
+    height: 100%;
+    width: 100%;
+}
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+#search-input {
+	padding-top: 3px;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.main {
+	padding-left: 0px;
+	padding-right: 0px;
+}

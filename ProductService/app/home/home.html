@@ -1,0 +1,51 @@
+<div class="w3-content w3-section" style="max-width:700px">
+    <img class="mySlides w3-animate-top" src="assets/1.gif" style="width:100%">
+    <img class="mySlides w3-animate-bottom" src="assets/2.gif" style="width:100%">
+    <img class="mySlides w3-animate-top" src="assets/3.gif" style="width:100%">
+    <img class="mySlides w3-animate-bottom" src="assets/4.gif" style="width:100%">
+</div>
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+            myIndex = 1
+        }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 2500);
+    }
+</script>
+
+
+<div class="row">
+  <div class="large-4 small-4 columns">
+    <button type="button" ng-click="goToBikePart(forks)">Forks</button>
+    </div>
+  <div class="large-4 small-4 columns">
+    <button ng-click="goToBikePart(frames)" type="button">Frames</button>
+  </div>
+
+      <div class="large-4 small-4 columns">
+	<button ng-click="goToBikePart(seats)" type="button">Seats</button>
+	</div>
+</div>
+
+<div class="row">
+  <div class="large-4 small-4 columns">
+    <button ng-click="goToBikePart(handles)" type="button">Handles</button>
+  </div>
+  <div class="large-4 small-4 columns">
+    <button ng-click="goToBikePart(wheels)" type="button">Wheels</button>
+  </div>
+  <div class="large-4 small-4 columns">
+    <button ng-click="goToCustomBike()" type="button">Custom Bikes</button>
+  </div>
+</div>

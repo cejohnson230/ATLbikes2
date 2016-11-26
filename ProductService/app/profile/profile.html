@@ -1,0 +1,46 @@
+<br>Username</br>
+<input type="text" ng-model="user.username">
+<br>Password</br>
+<input type="password" ng-model="user.password">
+<br>First Name</br>
+<input type="text" ng-model="user.first_name">
+<br>Last Name</br>
+<input type="text" ng-model="user.last_name">
+<br>Email</br>
+<input type="text" ng-model="user.email">
+<br>Street Address</br>
+<input type="text" ng-model="user.address.street_address">
+<br>City</br>
+<input type="text" ng-model="user.address.city">
+<br>Zip Code</br>
+<input type="text" ng-model="user.address.zip_code">
+<form name="cardform">
+<br>Credit Card Number</br>
+<input type="text" ng-model="user.card.card_number" payments-validate="card" payments-format="card">
+<br>Exp Date</br>
+<input type="text" ng-model="user.card.exp_date" payments-validate="expiry" payments-format="expiry">
+<br>Security Code</br>
+<input type="text" ng-model="user.card.card_code" payments-validate="cvc" payments-format="cvc">
+</form>
+<button type="button" name="login" ng-click="updateFunc()">Update</button>
+<button type="button" name="login" ng-click="cancelFunc()">Cancel</button>
+<button type="button" ng-click="getOrders()">Get Past Orders</button>
+
+
+
+<div ng-repeat="order in orders">
+    <div class="row">
+        <div class="small-6 column">Name</div>
+        <div class="small-3 column">Price</div>
+        <div class="small-3 column">Quantity</div>
+    </div>
+    <div class="row" ng-repeat="cartitem in order.cart">
+        <div class="small-6 column">{{cartitem.item.name}}</div>
+
+        <div class="small-3 column">{{cartitem.item.price}}</div>
+
+        <div class="small-3 column">{{cartitem.quantity}}</div>
+    </div>
+    <br />
+    <br />
+</div>

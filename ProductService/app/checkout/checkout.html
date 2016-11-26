@@ -1,0 +1,58 @@
+<h1>Checkout</h1>
+<div class="row">
+  <div class="small-4-offset small-2 column"><h3>Item</h3></div>
+  <div class="small-4-offset small-2 column"><h3>Price</h3></div>
+</div>
+    <div class="row" ng-repeat="cartitem in cart" >
+      <div ng-switch on="checkIfBike(cartitem)">
+          <div ng-switch-when="false" class="small-4 column">
+            <img ng-src="{{cartitem.item.photo}}?{{$index}}" class="md-avatar" alt="{{cartitem.item.name}}" />
+	  </div>
+          <div ng-switch-when="false" class="small-2 column">{{ cartitem.item.name }}
+	  </div>
+	  <div ng-switch-when="false" class="small-2 column">{{ cartitem.quantity }}</div>
+
+    <div ng-switch-when="true" class="small-8 column">
+      <custombike index=$index fork-color = "cartitem.item.forkColor" frame-color="cartitem.item.frameColor"
+      seat-color='cartitem.item.seatColor' handle-color="cartitem.item.handleColor" frame-decal-color='caritem.item.frameDecalColor'></custombike>
+    </div>
+    <div class="small-1 column">
+    ${{cartitem.item.price}}
+    </div>
+    </div>
+  </div>
+<h1>Name</h1>
+<br>First Name</br>
+<input type="text" ng-model="user.first_name">
+<br>Last Name</br>
+<input type="text" ng-model="user.last_name">
+<br>Email</br>
+<input type="text" ng-model="user.email">
+
+<h1>Mail Address</h1>
+<br>Street Address</br>
+<input type="text" ng-model="mail_address.street_address">
+<br>City</br>
+<input type="text" ng-model="mail_address.city">
+<br>Zip Code</br>
+<input type="text" ng-model="mail_address.zip_code">
+
+
+<h1>Billing Address</h1>
+<br>Street Address</br>
+<input type="text" ng-model="billing_address.street_address">
+<br>City</br>
+<input type="text" ng-model="billing_address.city">
+<br>Zip Code</br>
+<input type="text" ng-model="billing_address.zip_code">
+<br>Credit Card Number</br>
+<form name="cardform">
+<input type="text" ng-model="card.card_number" payments-validate="card" payments-format="card">
+<br>Exp Date</br>
+<input type="text" ng-model="card.exp_date" payments-validate="expiry" payments-format="expiry">
+<br>Security Code</br>
+<input type="text" ng-model="card.card_code" payments-validate="cvc" payments-format="cvc">
+<form>
+
+<button type="button" name="login" ng-click="placeOrderFunc()">Place Order</button>
+<button type="button" name="login" ng-click="cancelFunc()">Cancel</button>
