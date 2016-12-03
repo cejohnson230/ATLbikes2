@@ -1,59 +1,8 @@
-<style>
-div{
-  display: table;
-}
-span{
-  vertical-align: middle;
-  display: table-cell;
-}
-.button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #f7d18f;
-  border: none;
-  color: rgba(218, 75, 29, 0.83);
-  text-align: center;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: '»';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-</style>
-
-
-<div class="w3-content w3-section" style="max-width:100%">
+<div class="w3-content w3-section" style="max-width:700px">
     <img class="mySlides w3-animate-top" src="assets/1.gif" style="width:100%">
     <img class="mySlides w3-animate-bottom" src="assets/2.gif" style="width:100%">
-    <img class="mySlides w3-animate-top" src="assets/4.gif" style="width:100%">
-    <img class="mySlides w3-animate-bottom" src="assets/5.gif" style="width:100%">
-    <img class="mySlides w3-animate-bottom" src="assets/7.gif" style="width:100%">
-    <img class="mySlides w3-animate-bottom" src="assets/8.gif" style="width:100%">
-    <img class="mySlides w3-animate-bottom" src="assets/9.gif" style="width:100%">
-
+    <img class="mySlides w3-animate-top" src="assets/3.gif" style="width:100%">
+    <img class="mySlides w3-animate-bottom" src="assets/4.gif" style="width:100%">
 </div>
 
 <script>
@@ -75,37 +24,28 @@ span{
     }
 </script>
 
-<span>
+
 <div class="row">
   <div class="large-4 small-4 columns">
-    <button class="button" style="vertical-align:middle" ng-click="goToBikePart(forks)"><span>Forks</span></button>
+    <button type="button" ng-click="goToBikePart(forks)">Forks</button>
     </div>
-      </div>
-      <div class="row">
   <div class="large-4 small-4 columns">
-    <button class="button" style="vertical-align:middle" ng-click="goToBikePart(frames)"><span>Frames</span></button>
+    <button ng-click="goToBikePart(frames)" type="button">Frames</button>
   </div>
-  </div>
-<div class="row">
+
       <div class="large-4 small-4 columns">
-	<button class="button" style="vertical-align:middle" ng-click="goToBikePart(seats)"><span>Seats</span></button>
+	<button ng-click="goToBikePart(seats)" type="button">Seats</button>
 	</div>
 </div>
 
 <div class="row">
   <div class="large-4 small-4 columns">
-    <button class="button" style="vertical-align:middle" ng-click="goToBikePart(handles)"><span>Handles</span></button>
+    <button ng-click="goToBikePart(handles)" type="button">Handles</button>
   </div>
-    </div>
-    <div class="row">
   <div class="large-4 small-4 columns">
-    <button class="button" style="vertical-align:middle" ng-click="goToBikePart(wheels)"><span>Wheels</span></button>
+    <button ng-click="goToBikePart(wheels)" type="button">Wheels</button>
   </div>
-  </div>
-    <div class="row">
   <div class="large-4 small-4 columns">
-    <button class="button" style="vertical-align:middle" ng-click="goToCustomBike()"><span>Custom Bikes</span></button>
+    <button ng-click="goToCustomBike()" type="button">Custom Bikes</button>
   </div>
 </div>
-
-</span>
